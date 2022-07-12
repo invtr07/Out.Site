@@ -21,7 +21,7 @@ function Signup (){
                
                     <TextField type="password" id="outlined-basic" label="Password" variant="outlined" required />
                
-                    <Button onClick={()=>{window.location="../pages/Favorite.js"}}variant="outlined">Create account</Button>
+                    <Button onClick={()=>{}} variant="outlined">Create account</Button>
                     
                     <div>Already have account? <Link to="/login"> Sign in</Link></div> 
                </div>          
