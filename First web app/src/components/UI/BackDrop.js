@@ -1,8 +1,8 @@
 import classes from './BackDrop.module.css';
 
-function BackDrop(){
+function BackDrop(props){
      return(
-          <div className={classes.backdrop}>
+          <div onClick={props.close} className={classes.backdrop}>
           </div>
      )
 }

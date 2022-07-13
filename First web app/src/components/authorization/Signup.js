@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import './Signup.css'
 
 // material ui components
@@ -7,6 +8,7 @@ import { TextField } from "@mui/material";
 
 
 function Signup (){
+     let navigate = useNavigate();
 
      return (
      <div className="reg-box">
@@ -21,7 +23,7 @@ function Signup (){
                
                     <TextField type="password" id="outlined-basic" label="Password" variant="outlined" required />
                
-                    <Button onClick={()=>{}} variant="outlined">Create account</Button>
+                    <Button onClick={()=>{navigate("/favorites")}} variant="outlined">Create account</Button>
                     
                     <div>Already have account? <Link to="/login"> Sign in</Link></div> 
                </div>          

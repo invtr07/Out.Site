@@ -1,4 +1,4 @@
-import './Navbar.css';
+import classes from './Navbar.module.css';
 
 // import Burger from './Burger';
 
@@ -6,7 +6,7 @@ import './Navbar.css';
 function Navbar(){
      return(
          <nav>
-            Hello
+            Navbar
          </nav>      
 )}
 
