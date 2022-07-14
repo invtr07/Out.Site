@@ -23,7 +23,7 @@ function Signup (){
                
                     <TextField type="password" id="outlined-basic" label="Password" variant="outlined" required />
                
-                    <Button onClick={()=>{navigate("/favorites")}} variant="outlined">Create account</Button>
+                    <Button onClick={()=>{navigate("/wishlist")}} variant="outlined">Create account</Button>
                     
                     <div>Already have account? <Link to="/login"> Sign in</Link></div> 
                </div>          

@@ -4,7 +4,7 @@ import navburger from "../assets/Navburger.jpg";
 function Burger(props){
      return(
      <div onClick={props.open} className={classes.sidebox}>       
-        <img src={navburger} alt="NavBurger" />
+        <img src="../assets/Navburger.jpg" alt="NavBurger" />
      </div>
 )}
 

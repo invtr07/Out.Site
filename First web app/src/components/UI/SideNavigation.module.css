@@ -1,8 +1,0 @@
-.sideNav{
-     display: flex;
-     position: absolute;
-     width:50%;
-     height: 100%;
-     background-color: black;
-     z-index: 1;
-}

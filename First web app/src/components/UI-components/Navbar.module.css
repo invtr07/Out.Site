@@ -1,0 +1,13 @@
+ .navbox{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ .share{
+     margin-right: 8%;
+ }
+
+h1{
+     color: #27AE60;
+}
+
