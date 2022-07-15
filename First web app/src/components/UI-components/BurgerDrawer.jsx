@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
+
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
@@ -9,6 +11,8 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from '@mui/icons-material/Menu';
 
+import privateLists from "../../store/privateList";
+import sharedLists from "../../store/sharedList";
 
 export default function BurgerDrawer() {
   const [state, setState] = React.useState({
@@ -23,31 +27,36 @@ export default function BurgerDrawer() {
       return;
     }
 
-    setState({ ...state, [anchor]: open });
+    setState({ state, [anchor]: open });
   };
+
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
-      role="presentation"
+      // sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      // role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {["Wish-list", "Visited Places"].map((text) => (
-          <ListItem key={text} disablePadding>
+        {privateLists.map((data) => (
+          <ListItem key={data.id} disablePadding>
             <ListItemButton>
-              <ListItemText primary={text} />
+              <ListItemText> 
+                <Link to={data.path}> {data.list}</Link>
+              </ListItemText>
             </ListItemButton>
           </ListItem>
         ))}
       </List>
       <Divider />
       <List>
-        {["Wish-list for trip to SimCity", "List of romantic places in Almaty ","Best places for work" ].map((text) => (
-          <ListItem key={text} disablePadding>
+        {sharedLists.map((data) => (
+          <ListItem key={data.id} disablePadding>
             <ListItemButton>
-              <ListItemText primary={text} />
+              <ListItemText>
+                <Link to={data.path}> {data.list}</Link>
+              </ListItemText>
             </ListItemButton>  
           </ListItem>
         ))}

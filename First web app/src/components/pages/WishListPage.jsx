@@ -10,7 +10,7 @@ function WishListPage (){
           <div className={classes.page}>
                <Navbar/>
                <PlaceCard/>
-               <Button variant='contained'>Add</Button>
+               <Button style={{width:"90%"}}variant='contained'>Add</Button>
           </div>
 )}
 

@@ -8,6 +8,9 @@ import Login from '../components/authorization/Login';
 import VisitedPlaces from '../components/pages/Visitedplaces'
 import WishListPage from '../components/pages/WishListPage'
 
+// import privateLists from '../store/privateList';
+// import sharedLists from '../store/sharedList';
+
 function App() { 
   return (
     <div className={classes.app}>
@@ -15,8 +18,9 @@ function App() {
             <Route path='/' element={<Signup/>} />
             <Route path='/login' element={<Login/>} />   
 
-            <Route path='/visitedplaces' element={<VisitedPlaces/>}/>
-            <Route path='/wishlist' element={<WishListPage/>}/>     
+            {/* {privateLists.map(()=>)} */}
+            <Route path="/visitedplaces" element={<VisitedPlaces/>}/>
+            <Route path="/wishlist" element={<WishListPage/>}/>     
 
           </Routes>          
     </div>
