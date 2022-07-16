@@ -1,5 +1,4 @@
 import classes from './Burger.module.css';
-import navburger from "../assets/Navburger.jpg";
 
 function Burger(props){
      return(
