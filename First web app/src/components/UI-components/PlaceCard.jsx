@@ -48,7 +48,7 @@ export default function PlaceCard() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button><EditButton style={{color: "#BBBBBB"}}/></Button> 
+              <Button ><EditButton onClick={console.log("works")}style={{color: "#BBBBBB"}}/></Button> 
             </CardActions>
           </Card>
     )

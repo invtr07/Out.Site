@@ -8,8 +8,6 @@ import Login from '../components/authorization/Login';
 import VisitedPlaces from '../components/pages/Visitedplaces'
 import WishListPage from '../components/pages/WishListPage'
 
-// import privateLists from '../store/privateList';
-// import sharedLists from '../store/sharedList';
 
 function App() { 
   return (

@@ -15,7 +15,7 @@ function Login(){
                
                <TextField type="password" id="outlined-basic" label="Password" variant="outlined" />
                
-               <Button onClick={()=>{navigate('/wishlist')}}variant="outlined">Create account</Button>
+               <Button onClick={()=>{navigate('/wishlist')}}variant="outlined">Login</Button>
 
                <p>Don't have account? <Link to="/">Sign up</Link></p>
           </div>               
