@@ -8,8 +8,6 @@ import classes from './addForm.module.css'
 
 const cardStyle = {
      zIndex: 3,
-     width: "100%",
-     height: "50%",
      backgroundColor: "white",
      position: "absolute",
      width: 306,

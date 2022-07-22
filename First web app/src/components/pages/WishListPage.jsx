@@ -1,30 +1,33 @@
 import classes from './WishList.module.css';
+import React from 'react';
 
 import Navbar from '../UI-components/Navbar';
 import PlaceCard from '../UI-components/PlaceCard'
 import AddForm from '../UI-components/AddForm';
-import BackDrop from '../UI-components/BackDrop';
+import Backdrop from '@mui/material/Backdrop';
 
 import { Button } from '@mui/material';
-import { useState } from 'react';
 
 
 function WishListPage (){
      
-     const [form, setForm]=useState(false);
-
+     const [open, setOpen] = React.useState(false);
 
      return (
           <div className={classes.page}>
                <Navbar/>
                <PlaceCard/>
-               <Button onClick={()=> setForm(true)} style={{
+               <Button onClick={()=> setOpen(true)} style={{
                     width:"90%", 
                     backgroundColor: "#27AE60"
                     }} variant='contained'>Add</Button>
-
-               {form && <AddForm/>}
-               {form && <BackDrop onClose={()=>setForm(false)}/>}
+               <Backdrop
+               sx={{ color: '#fff', zIndex: "0"}}
+               open={open}
+               onClick={()=>setOpen(false)}
+               >
+               </Backdrop>
+               {open && <AddForm/>}
           </div>
 )}
 
