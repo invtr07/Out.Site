@@ -39,7 +39,6 @@ const dummyObject = [
       isActive: false,
     },
 ]
-
 export default function PlaceCard() {
   const [edit, setEdit]= React.useState(false);
 
