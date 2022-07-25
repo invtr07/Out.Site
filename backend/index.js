@@ -5,13 +5,14 @@ import dotenv from 'dotenv'
 dotenv.config();
 
 const PORT = process.env.PORT ||  5000
+const URI = process.env.OUTSITE_DB_URI
 const app = express();
 app.use(cors())
 app.use(express.json())
 
 const start = async () => {
      try{
-         await mongoose.connect(process.env.OUTSITE_DB_URI)
+         await mongoose.connect(URI)
          app.listen(PORT, ()=> {
              console.log(`listening on port ${PORT}`)
          })
@@ -21,3 +22,7 @@ const start = async () => {
  }
  
 await start()
+
+app.get("/", (req, res)=>{
+    res.send("Hello")
+})
