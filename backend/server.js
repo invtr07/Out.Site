@@ -1,18 +1,39 @@
-// import express from 'express'
-// import cors from 'cors'
-// import outsite from './api/v1/outsite.route.js'
+import express from 'express'
+import mongoose from 'mongoose'
+import cors from 'cors'
+import dotenv from 'dotenv'
+dotenv.config();
 
-// const app = express();
+const PORT = process.env.PORT ||  3001
+const URI = process.env.OUTSITE_DB_URI
+const app = express();
 
-// app.use(cors())
-// app.use(express.json())
+//calling middleware
+app.use(cors())
+app.use(express.json())
 
-// app.use("api/v1/outsite", outsite)
-// app.use("*", (req, res)=>res.status(404).json({error: "not found"}))
+//import the routes
+import userRoutes from './routes/user.js'
 
-// app.get("/list", (req, res)=>{
-//      res.send("Hello")
-// })
+//using routes
+app.use("/api", userRoutes)
 
-// export default app
+
+//db connection establishing
+const start = async () => {
+     try{
+         await mongoose.connect(URI)
+         //starting server
+         app.listen(PORT, ()=> {
+             console.log(`listening on port ${PORT}`)
+         })
+     } catch(e) {
+         console.log(e)
+     }
+ }
+ 
+await start()
+
+
+
 
