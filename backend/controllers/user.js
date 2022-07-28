@@ -9,7 +9,7 @@ function signup (req, res){
                })
           }
 
-          res.json({
+          return res.json({
                message: "success",
                user
           })

@@ -13,7 +13,6 @@ const userSchema = mongoose.Schema({
      },
      lastname: {
           type: String,
-          required: true,
           trim: true,
           maxlength: 32,
      },
@@ -34,13 +33,13 @@ const userSchema = mongoose.Schema({
 
 //virtual property that is NOT stored in mongodb
 userSchema.virtual("password")
-     .set((password)=>{
-          this.pass = password
+     .set(function(password){
+          this._password = password
           this.salt = uuidv1()
-          encry_password= this.securePassword(password)
+          this.encry_password= this.securePassword(password)
      })
-     .get(()=>{
-          return this.pass
+     .get(function(){
+          return this._password
      })
 
 userSchema.methods = {

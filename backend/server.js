@@ -9,8 +9,8 @@ const URI = process.env.OUTSITE_DB_URI
 const app = express();
 
 //calling middleware
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
 //import the routes
 import userRoutes from './routes/user.js'
