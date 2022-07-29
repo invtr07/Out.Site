@@ -4,11 +4,11 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 dotenv.config();
 
-const PORT = process.env.PORT ||  3001
+const PORT = process.env.PORT ||  8000
 const URI = process.env.OUTSITE_DB_URI
 const app = express();
 
-//calling middleware
+//using middleware
 app.use(cors());
 app.use(express.json());
 
@@ -18,21 +18,22 @@ import userRoutes from './routes/user.js'
 //using routes
 app.use("/api", userRoutes)
 
-
 //db connection establishing
-const start = async () => {
-     try{
-         await mongoose.connect(URI)
-         //starting server
-         app.listen(PORT, ()=> {
-             console.log(`listening on port ${PORT}`)
-         })
-     } catch(e) {
-         console.log(e)
-     }
- }
- 
-await start()
+mongoose.connect(URI)
+.then(()=>{
+    console.log("DB is connected")
+})
+.catch(()=>{
+    console.log("Unable to connect to DB")
+})
+
+//running server
+app.listen(PORT, ()=>{
+    console.log(`App is running on port ${PORT}`)
+})
+
+
+
 
 
 

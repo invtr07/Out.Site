@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema({
           type: String,
           required: true,
           maxlength: 32,
-          trim: true
+          trim: true,
      },
      lastname: {
           type: String,
@@ -58,3 +58,4 @@ userSchema.methods = {
 }
 const model =  mongoose.model("User", userSchema)
 export default model;
+
