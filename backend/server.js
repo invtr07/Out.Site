@@ -9,8 +9,8 @@ const URI = process.env.OUTSITE_DB_URI
 const app = express();
 
 //using middleware
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 //import the routes
 import userRoutes from './routes/user.js'
@@ -20,17 +20,20 @@ app.use("/api", userRoutes)
 
 //db connection establishing
 mongoose.connect(URI)
-.then(()=>{
-    console.log("DB is connected")
-})
-.catch(()=>{
-    console.log("Unable to connect to DB")
-})
+    .then(()=>{
+        console.log("DB is connected")
+    })
+    .catch(()=>{
+        console.log("Unable to connect to DB")
+    })
 
 //running server
 app.listen(PORT, ()=>{
     console.log(`App is running on port ${PORT}`)
 })
+
+
+
 
 
 
